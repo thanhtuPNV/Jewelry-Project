@@ -1,0 +1,133 @@
+﻿
+@model List<Model2.framework.product>
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <script src="https://kit.fontawesome.com/25556f4ea2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/tainguyen/homepage/detail.css">
+    @*<link rel="stylesheet" href="~/tainguyen/homepage/fontawesome-free-6.0.0-web/fontawesome-free-6.0.0-web/css/all.min.css">*@
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="block-detail">
+                <div class="detail-img-pro">
+                    <img src="https://custom-made.axiomthemes.com/wp-content/uploads/2016/09/product-4-1.jpg" alt="">
+                </div>
+                <div class="detail-des-pro">
+                    <ul>
+                        <li>£42000</li>
+                        <li><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></li>
+                    </ul>
+                    <p>Porttitor magna cras vel  libero hendrerit vel nam in sapien id urna egestas cursus. Ut enim ad minim eniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <form class="form-control">
+                        <div class="form-group">
+                            <label class="form-label">material</label>
+                            <select class="form-select">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">size</label>
+                            <select class="form-select">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                        </div>
+                    </form>
+                    <div class="btn-group">
+                        <input type="number" value="1" min="1">
+                        <button><i class="fa-solid fa-cart-shopping"></i> BUY NOW</button>
+                    </div>
+                    <span>
+                        <p>SKU: 2837</p>
+                        <p>Categories: Earrings, Expression Jewelry, Gemstones</p>
+                        <p>Tags: Diamond, Pearl, White Gold</p>
+                        <p>Product ID: 692</p>
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <div class="wrapper">
+                <div class="tabs">
+                    <div class="tab">
+                        <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+                        <label for="tab-1" class="tab-label">description</label>
+                        <div class="tab-content">Lorem ipsum dolor sit amet, consenter adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+                        <label for="tab-2" class="tab-label">additional information</label>
+                        <div class="tab-content">
+                            <h3>Additional information</h3>
+                            <div class="tab-group">
+                                <label for="tab-label-2" class="tab-label-2">material</label>
+                                <label for="tab-select-2" class="tab-select-2">Gold, Platinum, Silver </label>
+                                <!-- <input type="text" class="tab-select-2" placeholder="Gold, Platinum, Silver"> -->
+                            </div>
+                            <div class="tab-group">
+                                <label for="" class="tab-label-2">size</label>
+                                <label for="" class="tab-select-2">6, 7, 8</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
+                        <label for="tab-3" class="tab-label">reviews</label>
+                        <div class="tab-content">
+                            <li class="review byuser comment-author-admin bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-9"></li><!-- #comment-## -->
+                            <div id="review_form_wrapper">
+                                <div id="review_form">
+                                    <div id="respond" class="comment-respond">
+                                        <span id="reply-title" class="comment-reply-title">Add a review <small><a rel="nofollow" id="cancel-comment-reply-link" href="/product/band-ring-in-platinum-with-diamonds/#respond" style="display:none;">Cancel reply</a></small></span><form action="https://custom-made.axiomthemes.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+                                            <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><div class="comment-form-rating">
+                                                <label for="rating">Your rating&nbsp;<span class="required">*</span></label><p class="stars">						<span>							<a class="star-1" href="#">1</a>							<a class="star-2" href="#">2</a>							<a class="star-3" href="#">3</a>							<a class="star-4" href="#">4</a>							<a class="star-5" href="#">5</a>						</span>					</p><div class="select_container">
+                                                    <span name="rating" id="rating" required="" style="display: none;">
+                                                        <option value="">Rate…</option>
+                                                        <option value="5">Perfect</option>
+                                                        <option value="4">Good</option>
+                                                        <option value="3">Average</option>
+                                                        <option value="2">Not that bad</option>
+                                                        <option value="1">Very poor</option>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <p class="comment-form-comment">
+                                                <label for="comment">Your review&nbsp;<span class="required">*</span></label>
+                                                <textarea id="comment" name="comment" cols="45" rows="8" required=""></textarea>
+                                            </p>
+                                            <p class="comment-form-author">
+                                                <label for="author">Name&nbsp;<span class="required">*</span></label>
+                                                <input id="author" name="author" type="text" value="" size="30" required="">
+                                            </p>
+                                            <p class="comment-form-email">
+                                                <label for="email">Email&nbsp;<span class="required">*</span></label>
+                                                <input id="email" name="email" type="email" value="" size="30" required="">
+                                            </p>
+                                            <p class="form-submit">
+                                                <input name="submit" type="submit" id="submit" class="submit sc_button_hover_slide_left" value="Submit">
+                                                <input type="hidden" name="comment_post_ID" value="692" id="comment_post_ID">
+                                                <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                                            </p>
+                                    </div><!-- #respond -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+</body>
+</html>
+
+

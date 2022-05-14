@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "dec00537-83ae-4c08-aa04-e5abd47d88b3": {
+      "ProjectGuid": "dec00537-83ae-4c08-aa04-e5abd47d88b3",
+      "DisplayName": "dbAspNET",
+      "ColorIndex": 0
+    },
+    "d0c6185b-6866-4f35-97e3-e29112f52375": {
+      "ProjectGuid": "d0c6185b-6866-4f35-97e3-e29112f52375",
+      "DisplayName": "Model",
+      "ColorIndex": 1
+    },
+    "9790939a-92da-4019-a0c6-3b3b061817b7": {
+      "ProjectGuid": "9790939a-92da-4019-a0c6-3b3b061817b7",
+      "DisplayName": "Model2",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
