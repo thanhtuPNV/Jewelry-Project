@@ -5,83 +5,90 @@
     Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
 }
 
-<style>
-    table {
-        border-collapse: collapse;
-        width: 70%;
-        margin: auto;
-    }
+<!-- partial -->
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white me-2">
+                    <i class="mdi mdi-clipboard-check"></i>
+                </span> Quản Lý Sản Phẩm
+            </h3>
+            <nav aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <span></span>Quản Lý Sản Phẩm <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-12 grid-margin">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Quản Lý Sản Phẩm</h4>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <th>Mã Sản Phẩm</th>
+                                    <th>Tên Sản Phâm</th>
+                                    <th>Hình Ảnh</th>
+                                    <th>Tình Trạng</th>
+                                    <th>Quản lý ảnh</th>
+                                    <th colspan="2">
+                                        <a href="@Url.Action("Create","SanPhamAdmin")" style="text-decoration: none "><img src="~/Asset/images/AddNSX.png" /><span style="color:green;">Thêm mới</span> </a>
+                                    </th>
 
-    th, td {
-        text-align: center;
-        padding: 8px;
-    }
+                                </tr>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td> @item.MaSanPham</td>
+                                        <td>@item.TenSanPham</td>
 
-    tr:nth-child(even) {
-        background-color: #5d5e63;
-    }
+                                        <td>@Html.Partial("_AvartaImg", DoAn_ShopOnline.Models.BUS.ShopOnlineBUS.LoadAvartaImg(@item.MaSanPham))</td>
+                                        <td>@item.TinhTrang</td>
 
-    th {
-        background-color: #2a9fd6;
-        color: white;
-    }
-</style>
-<h2>Quản Lý Sản Phẩm</h2>
-@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
-<table>
-    <tr>
-        <th>Mã Sản Phẩm</th>
-        <th>Tên Sản Phâm</th>
-        <th>Hình Ảnh</th>
-        <th>Tình Trạng</th>
-        <th>Quản lý ảnh</th>
-        <th colspan="2">
-            <a href="@Url.Action("Create","SanPhamAdmin")" style="text-decoration: none "><img src="~/Asset/images/AddNSX.png" /><span style="color:green;">Thêm mới</span> </a>
-        </th>
-        
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td > @item.MaSanPham</td>
-            <td>@item.TenSanPham</td>
-            
-            <td >@Html.Partial("_AvartaImg", DoAn_ShopOnline.Models.BUS.ShopOnlineBUS.LoadAvartaImg(@item.MaSanPham))</td>
-            <td>@item.TinhTrang</td>
+                                        <td><a href="#" data-id="@item.MaSanPham" class="btn-images"><img src="~/Asset/images/ThemHinh.png" style="background:white;" /></a></td>
 
-            <td><a href="#" data-id="@item.MaSanPham" class="btn-images"><img src="~/Asset/images/ThemHinh.png" style="background:white;" /></a></td>
+                                        <td><a href="@Url.Action("Edit","SanPhamAdmin",new { id = @item.MaSanPham})"> <img src="~/Asset/images/edit.png" /></a> </td>
+                                        <td><a href="@Url.Action("Delete","SanPhamAdmin",new { id = @item.MaSanPham})"> <img src="~/Asset/images/Delete.png" /></a> </td>
+                                    </tr>
+                                }
+                            </table>
+                            <!-- Modal -->
+                            <div class="modal fade" id="imagesManange" role="dialog">
+                                <div class="modal-dialog">
 
-            <td><a href="@Url.Action("Edit","SanPhamAdmin",new { id = @item.MaSanPham})"> <img src="~/Asset/images/edit.png" /></a> </td>
-            <td><a href="@Url.Action("Delete","SanPhamAdmin",new { id = @item.MaSanPham})"> <img src="~/Asset/images/Delete.png" /></a> </td>
-        </tr>
-    }
-   
-</table>
-<!-- Modal -->
-<div class="modal fade" id="imagesManange" role="dialog">
-    <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Quản Lý Ảnh</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div id="imageList">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Quản Lý Ảnh</h4>
-            </div>
-            <div class="modal-body">
-                <div id="imageList">
+                                            </div>
+                                            <div class="clear"></div>
+                                            <input type="button" id="btnChooImages" class="btn btn-primary" value="Chọn ảnh" />
+                                            <input type="hidden" id="hidProductID" value="0" />
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" id="btnSaveImages">Save</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="clear"></div>
-                <input type="button" id="btnChooImages" class="btn btn-primary" value="Chọn ảnh" />
-                <input type="hidden" id="hidProductID" value="0" />
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" id="btnSaveImages">Save</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
-
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
     </div>
-</div>
+    <!-- main-panel ends -->
 
 

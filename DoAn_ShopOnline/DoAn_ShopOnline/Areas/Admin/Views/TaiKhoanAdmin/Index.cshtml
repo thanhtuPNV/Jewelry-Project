@@ -5,55 +5,63 @@
     Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
 }
 
-<style>
-    table {
-        border-collapse: collapse;
-        width: 100%;
-        margin: auto;
-    }
+<!-- partial -->
+<div class="main-panel">
+    <div class="content-wrapper">
+        <h6>Các tài khoản không cập nhân thông tin cá nhân sẽ không hiển thị lên</h6>
 
-    th, td {
-        text-align: center;
-        padding: 8px;
-    }
+        <div class="page-header">
+            <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white me-2">
+                    <i class="mdi mdi-clipboard-check"></i>
+                </span> Quản Lý Tài Khoản
+            </h3>
+            <nav aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <span></span>Quản Lý Tài Khoản <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-12 grid-margin">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Quản Lý Tài Khoản</h4>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <th>Tên Tài Khoản</th>
+                                    <th>Ngày Sinh</th>
+                                    <th>Số Điện Thoai</th>
+                                    <th>Địa Chỉ</th>
+                                    <th>Giới Tính</th>
+                                    <th colspan="3">Hành Động</th>
+                                </tr>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
 
-    tr:nth-child(even) {
-        background-color: #5d5e63;
-    }
-
-    th {
-        background-color: #2a9fd6;
-        color: white;
-    }
-</style>
-<h2>Quản Lý Tài Khoản</h2>
-<h6>Các tài khoản không cập nhân thông tin cá nhân sẽ không hiển thị lên</h6>
-@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
-<table>
-    <tr>
-        <th>Tên Tài Khoản</th>
-        <th>Ngày Sinh</th>
-        <th>Số Điện Thoai</th>
-        <th>Địa Chỉ</th>
-        <th>Giới Tính</th>
-        <th colspan="3">Hành Động</th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-
-            <td>@item.TenTaiKhoan</td>
-            <td>@item.NgaySinh</td>
-            <td>@item.SoDienThoai</td>
-            <td>@item.DiaChi</td>
-            <td>@item.GioiTinh</td>
-            <td><a href="@Url.Action("Khoa","TaiKhoanAdmin", new { id = @item.MaTaiKhoan })">Khóa</a></td>
-            <td><a href="@Url.Action("CapQuyen","TaiKhoanAdmin", new { id = @item.MaTaiKhoan })">Cấp Quyền</a></td>
-            <td><a href="@Url.Action("Sua","TaiKhoanAdmin", new { id = @item.MaTaiKhoan })">Sửa</a></td>
-        </tr>
-    }
-
-</table>
+                                        <td>@item.TenTaiKhoan</td>
+                                        <td>@item.NgaySinh</td>
+                                        <td>@item.SoDienThoai</td>
+                                        <td>@item.DiaChi</td>
+                                        <td>@item.GioiTinh</td>
+                                        <td><a href="@Url.Action("Khoa","TaiKhoanAdmin", new { id = @item.MaTaiKhoan })">Khóa</a></td>
+                                        <td><a href="@Url.Action("CapQuyen","TaiKhoanAdmin", new { id = @item.MaTaiKhoan })">Cấp Quyền</a></td>
+                                        <td><a href="@Url.Action("Sua","TaiKhoanAdmin", new { id = @item.MaTaiKhoan })">Sửa</a></td>
+                                    </tr>
+                                }
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div>
+    <!-- main-panel ends -->
 
 
 

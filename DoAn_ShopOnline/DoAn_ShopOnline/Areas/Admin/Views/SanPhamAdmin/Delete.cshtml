@@ -47,29 +47,29 @@
 </style>
 @using (Html.BeginForm("Delete", "SanPhamAdmin", FormMethod.Post))
 {
-    <table style="width:80% ;margin:auto; background:black;">
+    <table style="width: 80%; margin: auto; background: white;">
         <tr>
             <td>Mã Sản Phẩm</td>
-            <td> <input style="width: 300px;float:left; " maxlength="11" type="text" name="MaSanPham" required readonly  value="@Model.MaSanPham"/></td>
+            <td> <input style="width: 300px; float: left; background: white; " maxlength="11" type="text" name="MaSanPham" required readonly  value="@Model.MaSanPham"/></td>
         </tr>
 
         <tr>
             <td>Tên Sản Phẩm</td>
-            <td> <input style="width: 300px;float:left;" type="text"  maxlength="11" required readonly value="@Model.TenSanPham"/></td>
+            <td> <input style="width: 300px; float: left; background: white;" type="text"  maxlength="11" required readonly value="@Model.TenSanPham"/></td>
         </tr>
 
         <tr>
             <td>Giá</td>
-            <td> <input style="width: 300px; float:left;" type="number"  required  readonly value="@Model.Gia"/></td>
+            <td> <input style="width: 300px; float: left; background: white;" type="number"  required  readonly value="@Model.Gia"/></td>
         </tr>
         <tr>
             <td>Ghi Chú</td>
-            <td> <input style="width: 300px;float:left;" type="text"  required readonly value="@Model.Gia"/></td>
+            <td> <input style="width: 300px; float: left; background: white;" type="text"  required readonly value="@Model.Gia"/></td>
         </tr>
        
         <tr>
             <td style="width: 300px;">Cấu Hình</td>
-            <td colspan="2"><textarea class="ckeditor" name="CauHinh" readonly style="width: 300px; height: 150px;  max-width: 100px; max-height: 600px; background:white;" rows="4" cols="30"> @Model.CauHinh</textarea></td>
+            <td colspan="2"><textarea class="ckeditor" name="CauHinh" readonly style="width: 300px; height: 150px; background: white; max-width: 100px; max-height: 600px; background: white;" rows="4" cols="30"> @Model.CauHinh</textarea></td>
         </tr>
         <tr>
             <td colspan="3">

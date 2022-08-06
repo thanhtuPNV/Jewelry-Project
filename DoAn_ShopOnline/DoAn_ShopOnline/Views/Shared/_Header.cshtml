@@ -2,7 +2,7 @@
 <header class="container">
     <div class="row">
         <div class="col-md-4">
-            <div id="logo"><img src="~/Asset/images/logo.png" /></div>
+            <img style="width:200px" src="~/Asset/images/logouWatch.png" />
         </div>
         <div class="col-md-4">
             <form class="form-search" action="~/TimKiem/KetQuaTimKiem">
@@ -10,12 +10,12 @@
                 <input type="hidden" value="" name="MaLoaiSanPham" />
                 <input type="hidden" value="" name="GiaBatDau" />
                 <input type="hidden" value="" name="GiaKetThuc" />
-                <input type="text" class="input-medium search-query" name="timkiem" placeholder="Nhập tên sản phẩm">
+                <input type="text" class="input-medium search-query" name="timkiem" placeholder="Nhập tên sản phẩm.................">
                 <button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>
             </form>
         </div>
         <div class="col-md-4">
-            <div id="cart"><a class="btn btn-1" href="@Url.Action("index", "GioHang")"><span class="glyphicon glyphicon-shopping-cart"></span>CART : @Model.Count() ITEM</a></div>
+            <div id="cart"><a class="btn btn-1" href="@Url.Action("index", "GioHang")"><span class="glyphicon glyphicon-shopping-cart"></span>GIỎ HÀNG : @Model.Count() SẢN PHẨM</a></div>
         </div>
     </div>
 </header>

@@ -46,33 +46,33 @@
 </style>
 @using (Html.BeginForm("Create", "SanPhamAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-<table style="width:80% ;margin:auto; background:black;">
+<table style="width:80% ;margin:auto; background:white; ">
     <tr>
         <td>Mã Sản Phẩm</td>
-        <td> <input style="width: 300px;float:left; " maxlength="11" type="text" name="MaSanPham" required/></td>
+        <td> <input style="width: 300px; float: left; background: white; " maxlength="11" type="text" name="MaSanPham" required/></td>
     </tr>
     <tr>
         <td>Mã Loại Sản Phẩm</td>
         <td>
-            @Html.DropDownList("MaLoaiSanPham", null, new { @style = "float:left; width: 300px; background:black;height:30px;" })
+            @Html.DropDownList("MaLoaiSanPham", null, new { @style = "float:left; width: 300px; background:white;height:30px;" })
         </td>
     </tr>
     <tr>
         <td>Tên Sản Phẩm</td>
-        <td> <input style="width: 300px;float:left;" type="text" name="TenSanPham" maxlength="11" required/></td>
+        <td> <input style="width: 300px; float: left; background: white;" type="text" name="TenSanPham" maxlength="11" required/></td>
     </tr>   
     <tr>
         <td>Giá</td>
-        <td> <input style="width: 300px; float:left;" type="number" name="Gia" required/></td>
+        <td> <input style="width: 300px; float: left; background: white;" type="number" name="Gia" required/></td>
     </tr>
     <tr>
         <td>Ghi Chú</td>
-        <td> <input style="width: 300px;float:left;" type="text" name="GhiChu" required/></td>
+        <td> <input style="width: 300px; float: left; background: white;" type="text" name="GhiChu" required/></td>
     </tr>
     <tr>
         <td>Nhà Sản Xuất</td>
         <td>
-            @Html.DropDownList("MaNhaSanXuat", null, new { @style = "float:left; width: 300px; background:black;height:30px;" })
+            @Html.DropDownList("MaNhaSanXuat", null, new { @style = "float:left; width: 300px; background:white;height:30px;" })
 
         </td>
     </tr>
